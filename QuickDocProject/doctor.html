@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="./CSS/doctorStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--MENU-->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/QuickDocLogo2.png" alt="QuickDoc logo" class="logo-image">
+            <a href="./home.html" class="logo-link"><span class="logo-text">QuickDoc</span></a>
+            <ion-icon class="icon-menu" name="person-circle-outline"></ion-icon>
+        </div>
+        
+    </header>
+    
+    <div class="header-menu">
+        <nav class="nav-bar">
+            <ul class="menu">
+                <li><a href="./doctor.html">Prescriptions</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+   <!-- Formulario -->
+<div class="form-container">
+  <h2 class="form-title">New Prescription</h2>
+  <form action="" class="form-body" id="form-prescription">
+      <!-- Primera fila: First Name y Last Name -->
+      <div class="form-row">
+          <div class="form-group">
+              <label for="doctor-name">Doctor's Name</label>
+              <input type="text" id="doctor-name" required class="doctor-input">
+          </div>
+          <div class="form-group">
+              <label for="id-patient">ID Patient</label>
+              <input type="text" id="id-patient" required class="id-input">
+          </div>
+      </div>
+
+      <!-- Segunda fila: Date of Birth y Email -->
+      <div class="form-row">
+          <div class="form-group">
+            <label for="patient-name">Patient Name</label>
+            <input type="text" id="patient-name" required class="patient-input">
+          </div>
+          <div class="form-group">
+              <label for="date-of-birth">Date of Birth</label>
+              <input type="date" id="date-of-birth" required class="birth-input">
+          </div>
+      </div>
+
+      <!-- Tercera fila: Select Doctor y Time -->
+      <div class="form-row">
+            <div class="form-group">
+                <label for="diagnosis">Diagnosis</label>
+                <input type="text" id="diagnosis" required class="name-input">
+            </div>
+            <div class="form-group">
+                <label for="medication">Medications</label>
+                <input type="text" id="medication" required class="last-input">
+            </div>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="prescription-btn">Create Prescription</button>
+  </form>
+</div>
+
+  
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    
+</body>
+</html>

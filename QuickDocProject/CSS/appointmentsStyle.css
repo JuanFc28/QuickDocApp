@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f4f3;
+    color: #333;
+}
+
+/* Estilos del header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+}
+
+.logo-image {
+    width: 168px;
+    height: 168px;
+    
+}
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto */
+    cursor: pointer;
+}
+.logo-text {
+    
+    text-decoration: none;
+    font-size: 80px;
+    font-weight: bold;
+    color: #0d4979;
+    font-family: "Raleway", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+}
+
+.icon-menu{
+    width: 89px;
+    height: 88px;
+}
+/* Estilos barra menu */
+.header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #0d4979;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    width: 100%;
+}
+.navbar {
+    background-color: #0d4979;
+    padding: 10px 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 380px;
+}
+
+.appointment{
+    margin-left: 150px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+   
+}
+
+.menu li a:hover {
+    background-color: #0d4979;
+}
+
+/* Estilos generales */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4f3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Organización de filas */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilo de cada grupo de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo de etiquetas y campos */
+label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.time-input{
+    width: 300px;
+}
+.doctor-input{
+    width: 300px;
+}
+.name-input{
+    width: 300px;
+}
+.last-input{
+    width: 300px;
+}
+.birth-input{
+    width: 300px;
+}
+.email-input{
+    width: 300px;
+}
+/* Botón de envío */
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #0d4979;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0b3e6c;
+}
+
+/* Consult Container */
+.consult-container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4f3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.consult-title{
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.id-input{
+    width: 300px;
+    margin-left: 25px;
+    margin-right: 30px;
+}
+.btn-buscar{
+    padding: 10px 20px;
+    background-color: #0d4979;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.btn-buscar:hover {
+    background-color: #0b3e6c;
+}
+/* Tabla */
+.result-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#tabla-resultados {
+    width: 100%;
+    border-collapse: collapse; /* Elimina bordes dobles */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+#tabla-resultados thead {
+    background-color: #0d4979;
+    color: white;
+}
+
+#tabla-resultados th,
+#tabla-resultados td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filas hover */
+#tabla-resultados tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Última fila sin borde inferior */
+#tabla-resultados tbody tr:last-child td {
+    border-bottom: none;
+}

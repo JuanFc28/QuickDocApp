@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="container-form">
+            <form class="sign-in" id="loginForm">
+                <h2>LOGIN</h2>
+                <span>Use your ID and password</span>
+                <div class= "container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" placeholder="UserID" id="userId" required>
+                </div>
+                <div class= "container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                <a href="#">Forgot password?</a>
+                <button class="button">LOGIN</button>
+            </form>
+        </div>
+
+        <div class="container-form">
+            <form class="sign-up">
+                <h2>REGISTER</h2>
+                <span>Enter your data to register</span>
+                <div class= "container-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class= "container-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class= "container-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="text" placeholder="Password">
+                </div>
+                <button class="button">REGISTER</button>
+            </form>
+        </div>
+
+        <div class="container-welcome">
+            <div class="welcome-sign-up welcome">
+                <h3>Welcome!</h3>
+                <p>Enter your personal information to use all the features of the site</p>
+                <img src="./img/QuickDocLogo.png" alt="Welcome Image" class="auth-image">
+                <button class="button" id="btn-sign-up">Register</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h3>Hello!</h3>
+                <p>Register with your personal details to use all the features of the site.</p>
+                <img src="./img/QuickDocLogo.png" alt="Welcome Image" class="auth-image">
+                <button class="button" id="btn-sign-in">Log in</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button id="btn">Click</button> -->
+
+
+    <script src="./js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

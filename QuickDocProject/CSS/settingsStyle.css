@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f4f3;
+    color: #333;
+}
+
+/* Estilos del header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+}
+
+.logo-image {
+    width: 168px;
+    height: 168px;
+    
+}
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto */
+    cursor: pointer;
+}
+.logo-text {
+    
+    text-decoration: none;
+    font-size: 80px;
+    font-weight: bold;
+    color: #0d4979;
+    font-family: "Raleway", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+}
+
+.icon-menu{
+    width: 89px;
+    height: 88px;
+}
+/* Estilos barra menu */
+.header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #0d4979;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    width: 100%;
+}
+.navbar {
+    background-color: #0d4979;
+    padding: 10px 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 380px;
+}
+
+.appointment{
+    margin-left: 150px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+   
+}
+
+.menu li a:hover {
+    background-color: #0d4979;
+}
+
+/* Contenedor principal */
+.settings-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Título */
+.settings-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0d4979;
+}
+
+/* Formulario */
+.settings-form .form-group {
+    margin-bottom: 20px;
+}
+
+.settings-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="email"],
+.settings-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Botones */
+.btn-save,
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-save {
+    background-color: #0d4979;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #0b3e6c;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="./CSS/adminStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--MENU-->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/QuickDocLogo2.png" alt="QuickDoc logo" class="logo-image">
+            <a href="./home.html" class="logo-link"><span class="logo-text">QuickDoc</span></a>
+            <div class="user-profile">
+                <ion-icon class="icon-menu" name="person-outline"></ion-icon>
+                <span class="user-role">Administrator</span>
+            </div>
+        </div>
+        
+    </header>
+    
+    <div class="header-menu">
+        
+    </div>
+    
+   <!-- Manage users -->
+<div class="form-container">
+  <h2 class="form-title">Manage Users</h2>
+  <form action="" class="form-body" id="form-prescription">
+      <!-- Primera fila: First Name y Last Name -->
+      <div class="form-row">
+        <div class="form-group">
+            <label for="id-patient">ID Patient</label>
+            <input type="text" id="id-patient" required class="input">
+        </div>  
+        <div class="form-group">
+              <label for="user-name">User's Name</label>
+              <input type="text" id="user-name" required class="input">
+          </div>
+          <div class="form-group">
+            <label for="option-select">Select Doctor</label>
+              <select id="option-select" required class="input">
+                  <option value="">Choose an option</option>
+                  <option value="rename">Rename</option>
+                  <option value="delete">Delete</option>
+              </select>
+          </div>
+      </div>
+      <!-- Botón de envío -->
+      <button type="submit" class="edit-btn">Edit</button>
+  </form>
+</div>
+
+<!-- Manage medical appointment -->
+<div class="form-container">
+    <h2 class="form-title">Manage medical appointments</h2>
+    <form action="" class="form-body" id="form-prescription">
+        <!-- Primera fila: First Name y Last Name -->
+        <div class="form-row">
+          <div class="form-group">
+              <label for="id-patient">ID Patient</label>
+              <input type="text" id="id-patient" required class="input">
+          </div>  
+          <div class="form-group">
+                <label for="date-of-birth">Date of Birth</label>
+                <input type="date" id="date-of-birth" required class="input">
+            </div>
+            <div class="form-group">
+                <label for="hour">Hour</label>
+                <input type="time" id="hour" required class="input">
+            </div>
+        </div>
+        <!-- Botón de envío -->
+        <button type="submit" class="edit-btn">Edit</button>
+    </form>
+  </div>
+  
+  <!-- Manage Doctor schedules -->
+<div class="form-container">
+    <h2 class="form-title">Manage doctor schedules</h2>
+    <form action="" class="form-body" id="form-prescription">
+        <!-- Primera fila: First Name y Last Name -->
+        <div class="form-row">
+          <div class="form-group">
+              <label for="id-doctor">ID Doctor</label>
+              <input type="text" id="id-doctor" required class="input">
+          </div>  
+          <div class="form-group">
+                <label for="date-of-birth">Date of Birth</label>
+                <input type="date" id="date-of-birth" required class="input">
+            </div>
+            <div class="form-group">
+                <label for="hour">Hour</label>
+                <input type="time" id="hour" required class="input">
+            </div>
+        </div>
+        <!-- Botón de envío -->
+        <button type="submit" class="edit-btn">Edit</button>
+    </form>
+  </div>
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    
+</body>
+</html>

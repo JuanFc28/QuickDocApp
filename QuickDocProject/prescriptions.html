@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions</title>
+    <link rel="stylesheet" href="./CSS/prescriptionsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!--MENU-->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/QuickDocLogo2.png" alt="QuickDoc logo" class="logo-image">
+            <a href="./home.html" class="logo-link"><span class="logo-text">QuickDoc</span></a>
+            <ion-icon class="icon-menu" name="person-circle-outline"></ion-icon>
+        </div>
+        
+    </header>
+    
+    <div class="header-menu">
+        <nav class="nav-bar">
+            <ul class="menu">
+                <li class="appointment"><a href="./appointments.html">Appointments</a></li>
+                <li><a href="./prescriptions.html">Prescriptions</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- Vista de recetas -->
+    <div class="prescription-container">
+        <h2 class="prescription-title">Access and Download Your Prescriptions</h2>
+        <!-- Buscador por ID -->
+        <div class="search-section">
+            <label for="id-patient">Enter your ID:</label>
+            <input type="number" id="id-patient" placeholder="Enter ID" required class="id-input">
+            <button type="button" id="btn-buscar" class="btn-buscar">Search</button>
+        </div>
+        <h2 class="result-title">Prescription</h2>
+        <!-- Tarjeta de receta (visible cuando se encuentra una receta) -->
+        <div id="prescription-card" class="prescription-card hidden">
+            <h3>Medical Prescription</h3>
+            <p><strong>Patient:</strong> <span id="card-nombre">Juan Perez</span></p>
+            <p><strong>Doctor:</strong> <span id="card-doctor">Dr. John Doe</span></p>
+            <p><strong>Date:</strong> <span id="card-fecha">2025-04-05</span></p>
+            <p><strong>Diagnosis:</strong> <span id="card-diagnosis">Headache</span></p>
+            <p><strong>Medications:</strong> <span id="card-medications">Paracetamol 500 mg - 1 tablet every 8 hours</span></p>
+        </div>
+        <button type="button" id="btn-download" class="btn-download">Download as PDF</button>
+        <h2 class="result-title">History</h2>
+        <table id="tabla-resultados">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Doctor</th>
+                    <th>Fecha</th>
+                    <th>Diagnosis</th>
+                    <th>Medications</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertarán los datos dinámicamente -->
+                 <!-- Ejemplos -->
+                <tr>
+                  <td>1001</td>
+                  <td>Juan Perez</td>
+                  <td>Dr. John Doe</td>
+                  <td>2025-04-05</td>
+                  <td>Headache</td>
+                  <td>Paracetamol</td>
+                </tr>
+                <tr>
+                    <td>1001</td>
+                    <td>Pedro Pérez</td>
+                    <td>Dr. John Doe</td>
+                    <td>2025-04-06</td>
+                    <td>Headache</td>
+                    <td>Ibuprofeno</td>
+                  </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.getElementById("btn-download").addEventListener("click", function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+    
+            // Obtener los valores de la tarjeta
+            const nombre = document.getElementById("card-nombre").textContent;
+            const doctor = document.getElementById("card-doctor").textContent;
+            const fecha = document.getElementById("card-fecha").textContent;
+            const diagnosis = document.getElementById("card-diagnosis").textContent;
+            const medications = document.getElementById("card-medications").textContent;
+    
+            // Estilo del documento
+            doc.setFontSize(18);
+            doc.setTextColor(0, 89, 121); // Color azul oscuro como el logo
+            doc.text("Medical Prescription", 20, 20);
+    
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0); // Texto negro
+            doc.text(`Patient: ${nombre}`, 20, 40);
+            doc.text(`Doctor: ${doctor}`, 20, 50);
+            doc.text(`Date: ${fecha}`, 20, 60);
+            doc.text(`Diagnosis: ${diagnosis}`, 20, 70);
+            doc.text(`Medications: ${medications}`, 20, 80);
+    
+            // Guardar el PDF
+            doc.save("Prescription.pdf");
+        });
+    </script>
+</body>
+</html>

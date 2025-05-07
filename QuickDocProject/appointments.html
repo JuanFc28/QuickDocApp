@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="./CSS/appointmentsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--MENU-->
+    <header class="header">
+        <div class="logo">
+            <img src="./img/QuickDocLogo2.png" alt="QuickDoc logo" class="logo-image">
+            <a href="./home.html" class="logo-link"><span class="logo-text">QuickDoc</span></a>
+            <ion-icon class="icon-menu" name="person-circle-outline"></ion-icon>
+        </div>
+        
+    </header>
+    
+    <div class="header-menu">
+        <nav class="nav-bar">
+            <ul class="menu">
+                <li class="appointment"><a href="./appointments.html">Appointments</a></li>
+                <li><a href="./prescriptions.html">Prescriptions</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+   <!-- Formulario -->
+<div class="form-container">
+  <h2 class="form-title">New Appointment</h2>
+  <form action="" class="form-body" id="form-cita">
+      <!-- Primera fila: First Name y Last Name -->
+      <div class="form-row">
+          <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" required class="name-input">
+          </div>
+          <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" required class="last-input">
+          </div>
+      </div>
+
+      <!-- Segunda fila: Date of Birth y Email -->
+      <div class="form-row">
+          <div class="form-group">
+              <label for="date-of-birth">Date of Birth</label>
+              <input type="date" id="date-of-birth" required class="birth-input">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="@gmail.com" required class="email-input">
+          </div>
+      </div>
+
+      <!-- Tercera fila: Select Doctor y Time -->
+      <div class="form-row">
+          <div class="form-group">
+              <label for="doctor-select">Select Doctor</label>
+              <select id="doctor-select" required class="doctor-input">
+                  <option value="">Choose a doctor</option>
+                  <option value="dr-john-doe">Dr. John Doe</option>
+                  <option value="dr-jane-smith">Dr. Jane Smith</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="time-select">Time</label>
+              <select id="time-select" required class="time-input">
+                  <option value="">Choose a time</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+              </select>
+          </div>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="submit-btn">Schedule Appointment</button>
+  </form>
+</div>
+
+    <!-- Consulta formulario -->
+
+    <hr>
+    <div class="consult-container">
+        <h2 class="consult-title">Search appointment by ID</h2>
+        <label for="id-patient">Input ID of the consult</label>
+        <input type="number" id="id-patient" placeholder="Ingresa un ID" required class="id-input">
+        <button type="button" id="btn-buscar" class="btn-buscar">Search</button>
+        
+        <h2 class="result-title">Resultados</h2>
+        <table id="tabla-resultados">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertarán los datos dinámicamente -->
+                 <!-- Ejemplos -->
+                <tr>
+                  <td>1001</td>
+                  <td>Juan Pérez</td>
+                  <td>2025-04-05</td>
+                  <td>10:00 AM</td>
+                </tr>
+                <tr>
+                  <td>1002</td>
+                  <td>Ana Gómez</td>
+                  <td>2025-04-06</td>
+                  <td>11:00 AM</td>
+                </tr>
+                <tr>
+                  <td>1003</td>
+                  <td>Carlos Mendoza</td>
+                  <td>2025-04-07</td>
+                  <td>01:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Cargar la librería de Supabase -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="./js/appointmentdb.js"></script>
+   -->
+
+   <!-- Script principal con Supabase v2 (modular) -->
+   <!-- <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabaseUrl = 'https://uintoirzyackkzcdqvcy.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpbnRvaXJ6eWFja2t6Y2RxdmN5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYwMzIxMDAsImV4cCI6MjA2MTYwODEwMH0.xnWzU6fG3CLTVOzIj0KRSe8mszcUWpUW9Ai1e_nXEsQ';
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    document.getElementById('form-cita').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      const { error } = await supabase
+        .from('citas')
+        .insert([{ nombre, fecha, hora }]);
+
+      if (error) {
+        alert('Error al guardar la cita: ' + error.message);
+      } else {
+        alert('¡Cita agendada exitosamente!');
+        document.getElementById('form-cita').reset();
+      }
+    });
+
+    document.getElementById('btn-buscar').addEventListener('click', async () => {
+      const id = parseInt(document.getElementById('input-id').value);
+      if (!id) return;
+
+      const { data, error } = await supabase
+        .from('citas')
+        .select('*')
+        .eq('id', id);
+
+      const tbody = document.querySelector('#tabla-resultados tbody');
+      tbody.innerHTML = ''; // limpiar tabla
+
+      if (error) {
+        alert('Error al buscar: ' + error.message);
+        return;
+      }
+
+      data.forEach(cita => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <th>${cita.id}</th>
+          <td>${cita.nombre}</td>
+          <td>${cita.fecha}</td>
+          <td>${cita.hora}</td>
+        `;
+        tbody.appendChild(fila);
+      });
+    });
+  </script> -->
+
+
+    
+</body>
+</html>
